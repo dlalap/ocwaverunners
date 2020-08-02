@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{RXBc:function(n,e,t){"use strict";t.r(e),t.d(e,"default",(function(){return r}));var a=t("q1tI"),i=t.n(a),c=(t("Wbzz"),t("UP9x"),t("diX5")),o=t.n(c);function r(){return i.a.createElement("div",{className:"app"},i.a.createElement("img",{src:o.a,alt:"Wave Runners Logo",width:500}))}},UP9x:function(n,e,t){},diX5:function(n,e,t){n.exports=t.p+"static/wrhorizontal_white-a2783996b9e94e8e333539443a59e2b9.png"}}]);
+//# sourceMappingURL=component---src-pages-index-js-67276569e513d57d23b7.js.map
