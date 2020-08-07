@@ -11,12 +11,18 @@ body {
 .app {
   display: flex;
   flex-flow: column;
-  height: 100%;
-  width: 100%;
+  margin: auto;
+  height: 700px;
+}
+
+.landing {
+  display: flex;
+  flex-flow: column;
+  height: 700px;
   justify-content: center;
   align-items: center;
-  position: absolute;
   color: white;
+  border: 1px solid green;
 }
 
 .front-page-nav {
@@ -30,5 +36,10 @@ body {
 
 a {
   text-decoration: none;
+  color: white;
+}
+
+.menu-bar {
+  border: 1px solid blue;
   color: white;
 }
