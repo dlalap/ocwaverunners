@@ -6,7 +6,7 @@ const NavItem = styled(Link)`
   @import url("https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap");
   font-family: "Jost", sans-serif;
   text-decoration: none;
-  color: #111;
+  color: #fff;
   display: inline-block;
   white-space: nowrap;
   margin: 0 1vw;
@@ -21,13 +21,13 @@ const NavItem = styled(Link)`
     width: 0%;
     content: ".";
     color: transparent;
-    background: goldenrod;
+    background: #30c8ff;
     height: 1px;
     transition: all 0.4s ease-in;
   }
 
   :hover {
-    color: goldenrod;
+    color: #30c8ff;
     ::after {
       width: 100%;
     }
@@ -44,9 +44,9 @@ const NavbarLinks = () => {
   return (
     <>
       <NavItem to="https://instagram.com/ocwaverunners/">Instagram</NavItem>
-      <NavItem to="/404">Services</NavItem>
+      {/* <NavItem to="/404">Services</NavItem>
       <NavItem to="/">Gallery</NavItem>
-      <NavItem to="/404">Contact</NavItem>
+      <NavItem to="/404">Contact</NavItem> */}
     </>
   )
 }

@@ -18,11 +18,10 @@ body {
 .landing {
   display: flex;
   flex-flow: column;
-  height: 700px;
+  height: 70vh;
   justify-content: center;
   align-items: center;
   color: white;
-  border: 1px solid green;
 }
 
 .front-page-nav {

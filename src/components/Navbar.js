@@ -6,7 +6,7 @@ import styled from "styled-components"
 const Navigation = styled.nav`
   height: 10vh;
   display: flex;
-  background-color: #fff;
+  background-color: transparent;
   position: relative;
   justify-content: space-between;
   text-transform: uppercase;
@@ -49,7 +49,7 @@ const Navbox = styled.div`
     width: 100%;
     justify-content: flex-start;
     padding-top: 10vh;
-    background-color: #fff;
+    background-color: #000000cc;
     transition: all 0.3s ease-in;
     top: 8vh;
     left: ${props => (props.open ? "-100%" : "0")};
@@ -57,34 +57,35 @@ const Navbox = styled.div`
 `
 
 const Hamburger = styled.div`
-    background-color: #111;
+  background-color: #fff;
+  width: 30px;
+  height: 3px;
+  transition: all 0.3s linear;
+  align-self: center;
+  position: relative;
+  transform: ${props => (props.open ? "rotate(-45deg)" : "inherit")};
+
+  ::before,
+  ::after {
     width: 30px;
     height: 3px;
-    transition: all .3s linear;
-    align-self: center;
-    position: relative;
-    transform: ${props => (props.open ? "rotate(-45deg)" : "inherit")};
+    background-color: #fff;
+    content: "";
+    position: absolute;
+    transition: all 0.3s linear;
+  }
 
-    ::before,
-    ::after {
-        width: 30px;
-        height: 3px;
-        background-color: #111,
-        content: "";
-        position: absolute;
-        transition: all 0.3s linear;
-    }
+  ::before {
+    transform: ${props =>
+      props.open ? "rotate(-90deg) translate(-10px, 0px)" : "rotate(0deg)"};
+    top: -10px;
+  }
 
-    ::before {
-        transform: ${props =>
-          props.open ? "rotate(-90deg) translate(-10px, 0px)" : "rotate(0deg)"};
-    }
-
-    ::after {
-        opacity: ${props => (props.open ? "0" : "1")};
-        transform: ${props => (props.open ? "rotate(90deg)" : "rotate(0deg)")};
-        top: 10px;
-    }
+  ::after {
+    opacity: ${props => (props.open ? "0" : "1")};
+    transform: ${props => (props.open ? "rotate(90deg)" : "rotate(0deg)")};
+    top: 10px;
+  }
 `
 
 const Navbar = () => {
