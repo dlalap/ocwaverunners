@@ -5,9 +5,10 @@ import styled from "styled-components"
 
 const Navigation = styled.nav`
   height: 10vh;
+  width: 89.7%;
   display: flex;
-  background-color: transparent;
-  position: relative;
+  background-color: #222;
+  position: absolute;
   justify-content: space-between;
   text-transform: uppercase;
   border-bottom: 2px solid #33333320;

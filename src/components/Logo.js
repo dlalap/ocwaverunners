@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
+import WaveLogo from "../images/waves.svg"
 import { Link, useStaticQuery, graphql } from "gatsby"
 
 const LogoWrap = styled.div`
@@ -12,10 +13,24 @@ const LogoWrap = styled.div`
   }
 `
 
+const Svg = styled.span`
+  display: inline-block;
+  width: 40px;
+  height: 48px;
+  background-image: url("http://127.0.0.1:5500/src/images/waves.svg");
+
+  :hover,
+  :focus {
+    filter: invert(27%) sepia(100%) saturate(2878%) hue-rotate(346deg)
+      brightness(104%) contrast(97%);
+    transition: all 0.4s ease-in;
+  }
+`
+
 const Logo = () => {
   const data = useStaticQuery(graphql`
     query {
-      file(name: { eq: "waves" }, extension: { eq: "png" }) {
+      file(name: { eq: "waves" }, extension: { eq: "svg" }) {
         childImageSharp {
           fluid(maxWidth: 50, pngQuality: 80) {
             ...GatsbyImageSharpFluid
@@ -24,10 +39,12 @@ const Logo = () => {
       }
     }
   `)
+  console.log(data.file)
 
   return (
     <LogoWrap as={Link} to="/">
-      <Img fluid={data.file.childImageSharp.fluid} alt="logo" />
+      {/* <svg src={WaveLogo} alt="logo" className="svg-logo" /> */}
+      <Svg className="svg-logo" />
     </LogoWrap>
   )
 }

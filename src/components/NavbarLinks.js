@@ -43,10 +43,10 @@ const NavItem = styled(Link)`
 const NavbarLinks = () => {
   return (
     <>
+      <NavItem to="/runwithus">Run With Us</NavItem>
+      <NavItem to="/apparel">Apparel</NavItem>
+      <NavItem to="/about">About</NavItem>
       <NavItem to="https://instagram.com/ocwaverunners/">Instagram</NavItem>
-      {/* <NavItem to="/404">Services</NavItem>
-      <NavItem to="/">Gallery</NavItem>
-      <NavItem to="/404">Contact</NavItem> */}
     </>
   )
 }
