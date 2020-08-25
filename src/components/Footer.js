@@ -1,13 +1,14 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
+import IGOutline from "../images/instagram-new-outline.svg"
 
 const Svg = styled.span`
   display: flex;
   flex-direction: column;
   width: 40px;
   height: 40px;
-  background-image: url("http://127.0.0.1:5500/src/images/instagram-new-outline.svg");
+  background-image: url(${IGOutline});
 `
 
 const FooterLink = styled(Link)`

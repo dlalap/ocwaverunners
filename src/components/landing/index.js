@@ -1,6 +1,6 @@
 import React from "react"
 import Logo from "../../images/wrhorizontal_white.png"
-import Video from "../../video/ocwaverunners.mp4"
+import Video from "../../video/ocwaverunners.webm"
 
 const Landing = () => {
   return (
@@ -16,7 +16,7 @@ const Landing = () => {
           muted
           autoPlay
         >
-          <source src={Video} type="video/mp4" />
+          <source src={Video} type="video/webm" />
         </video>
       </div>
     </div>

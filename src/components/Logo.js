@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import Img from "gatsby-image"
 import WaveLogo from "../images/waves.svg"
 import { Link, useStaticQuery, graphql } from "gatsby"
 
@@ -17,7 +16,7 @@ const Svg = styled.span`
   display: inline-block;
   width: 40px;
   height: 48px;
-  background-image: url("http://127.0.0.1:5500/src/images/waves.svg");
+  background-image: url(${WaveLogo});
 
   :hover,
   :focus {

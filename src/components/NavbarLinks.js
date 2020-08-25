@@ -44,7 +44,7 @@ const NavbarLinks = () => {
   return (
     <>
       <NavItem to="/runwithus">Run With Us</NavItem>
-      <NavItem to="/apparel">Apparel</NavItem>
+      <NavItem to="/wavestore">Shop Apparel</NavItem>
       <NavItem to="/about">About</NavItem>
       <NavItem to="https://instagram.com/ocwaverunners/">Instagram</NavItem>
     </>
