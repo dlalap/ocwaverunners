@@ -19,6 +19,7 @@ import { CartProvider, useShoppingCart } from "use-shopping-cart"
 import WaveProduct from "../components/Cart/WaveProduct"
 import Cart from "../components/Cart/modal_cart"
 import Modal from "react-modal"
+import "./style.css"
 
 const ParallaxStyled = styled.div`
   background: #222;

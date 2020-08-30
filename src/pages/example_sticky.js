@@ -2,6 +2,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Controller, Scene } from "react-scrollmagic"
+import "./style.css"
 
 const StickyStyled = styled.div`
   .section {

@@ -2,6 +2,7 @@ import React from "react"
 import { loadStripe } from "@stripe/stripe-js"
 import { CartProvider } from "use-shopping-cart"
 import TestCart from "../components/Cart/test_cart.js"
+import "./style.css"
 
 const TestStore = props => {
   return (
