@@ -27,18 +27,18 @@ const Svg = styled.span`
 `
 
 const Logo = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      file(name: { eq: "waves" }, extension: { eq: "svg" }) {
-        childImageSharp {
-          fluid(maxWidth: 50, pngQuality: 80) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
-  console.log(data.file)
+  // const data = useStaticQuery(graphql`
+  //   query {
+  //     file(name: { eq: "waves" }, extension: { eq: "svg" }) {
+  //       childImageSharp {
+  //         fluid(maxWidth: 50, pngQuality: 80) {
+  //           ...GatsbyImageSharpFluid
+  //         }
+  //       }
+  //     }
+  //   }
+  // `)
+  // console.log(data.file)
 
   return (
     <LogoWrap as={Link} to="/">

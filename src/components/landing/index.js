@@ -5,7 +5,12 @@ import Video from "../../video/ocwaverunners.webm"
 const Landing = () => {
   return (
     <div className="landing">
-      <img src={Logo} alt="Wave Runners Logo" width="500vw" />
+      <img
+        className="landing-image"
+        src={Logo}
+        alt="Wave Runners Logo"
+        width="500vw"
+      />
 
       <div className="landing-parallax">
         <video

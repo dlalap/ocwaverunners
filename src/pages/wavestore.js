@@ -104,8 +104,10 @@ const WaveStore = () => {
     <CartProvider
       stripe={loadStripe(process.env.GATSBY_STRIPE_PUBLISHABLE_KEY)}
       mode="client-only"
-      successUrl={`${window.location.origin}/page-2/`}
-      cancelUrl={`${window.location.origin}/`}
+      successUrl={`/page-2/`}
+      cancelUrl={`/`}
+      // successUrl={`${window.location.origin}/page-2/`}
+      // cancelUrl={`${window.location.origin}/`}
       currency="USD"
       allowedCountries={["US", "CA"]}
       billingAddressCollection={true}
@@ -124,38 +126,34 @@ const WaveStore = () => {
               <Tween
                 position="0"
                 from={{ top: "0%", scale: 1.0 }}
-                to={{ top: "50%", scale: 1.0 }}
+                to={{ top: "40%", scale: 1.0 }}
               >
                 <h1>Apparel</h1>
               </Tween>
             </Timeline>
           </Scene>
-
           <div className="apparel-body">
-            <Carousel className="apparel-carousel">
-              <div>
-                <img src={ShirtFront} />
-                <p className="legend">Front</p>
-              </div>
-              <div>
-                <img src={ShirtBack} />
-                <p className="legend">Back</p>
-              </div>
-              <div>
-                <img src={Shirt_UnisexMedium} />
-                <p className="legend">Unisex Medium</p>
-              </div>
-              <div>
-                <img src={Shirt_WomensSmall} />
-                <p className="legend">Women's Small</p>
-              </div>
-              <div>
-                <img src={Shirt_UnisexLarge} />
-                <p className="legend">Unisex Large</p>
-              </div>
-            </Carousel>
-            <WaveProduct />
             <Cart />
+            <div className="apparel-section">
+              <Carousel className="apparel-carousel">
+                <div>
+                  <img src={ShirtFront} alt="shirt front" />
+                </div>
+                <div>
+                  <img src={ShirtBack} alt="shirt back" />
+                </div>
+                <div>
+                  <img src={Shirt_UnisexMedium} alt="unisex medium running" />
+                </div>
+                <div>
+                  <img src={Shirt_WomensSmall} alt="women's small" />
+                </div>
+                <div>
+                  <img src={Shirt_UnisexLarge} alt="unisex large squatting" />
+                </div>
+              </Carousel>
+              <WaveProduct />
+            </div>
           </div>
 
           <Footer />
