@@ -164,6 +164,36 @@ a {
   background-color: rgb(31, 88, 107);
 }
 
+.parallax-styled {
+  background: #222;
+}
+
+.parallax-styled .section {
+  height: 110vh;
+}
+.parallax-styled .parallax {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax-styled .parallax img {
+  width: 100vw;
+  height: 150vh;
+  object-fit: cover;
+  position: absolute;
+}
+
+.parallax-styled .parallax h1 {
+  position: absolute;
+  font-size: 100px;
+  height: 90vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
 .apparel-header {
   position: relative;
   height: 100vh;
