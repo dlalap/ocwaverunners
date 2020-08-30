@@ -61,7 +61,7 @@ header {
 
 .video-player {
   position: absolute;
-  opacity: 50%;
+  opacity: 0.5;
   top: 0;
   right: 0;
   left: 0;
