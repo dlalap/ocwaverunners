@@ -41,7 +41,7 @@ const formatPrice = (amount, currency) => {
   return numberFormat.format(price)
 }
 
-const ProductCard = ({ product }) => {
+const ProductCard = (props, { product }) => {
   const [loading, setLoading] = useState(false)
 
   const handleSubmit = async event => {
@@ -53,10 +53,10 @@ const ProductCard = ({ product }) => {
     const { error } = await stripe.redirectToCheckout({
       mode: "payment",
       lineItems: [{ price, quantity: 1 }],
-      successUrl: `/page-2/`,
-      cancelUrl: `/advanced`,
-      // successUrl: `${window.location.origin}/page-2/`,
-      // cancelUrl: `${window.location.origin}/advanced`,
+      // successUrl: `/page-2/`,
+      // cancelUrl: `/advanced`,
+      successUrl: `${props.location.href}/page-2/`,
+      cancelUrl: `${props.location.href}/advanced`,
     })
 
     if (error) {
