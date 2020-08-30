@@ -16,7 +16,7 @@ const Svg = styled.span`
   display: inline-block;
   width: 40px;
   height: 48px;
-  background-image: url("/waves.svg");
+  background-image: url("waves.svg");
 
   :hover,
   :focus {
@@ -27,18 +27,18 @@ const Svg = styled.span`
 `
 
 const Logo = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      file(name: { eq: "waves" }, extension: { eq: "svg" }) {
-        childImageSharp {
-          fluid(maxWidth: 50, pngQuality: 80) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
-  console.log(data.file)
+  // const data = useStaticQuery(graphql`
+  //   query {
+  //     file(name: { eq: "waves" }, extension: { eq: "svg" }) {
+  //       childImageSharp {
+  //         fluid(maxWidth: 50, pngQuality: 80) {
+  //           ...GatsbyImageSharpFluid
+  //         }
+  //       }
+  //     }
+  //   }
+  // `)
+  // console.log(data.file)
 
   return (
     <LogoWrap as={Link} to="/">
