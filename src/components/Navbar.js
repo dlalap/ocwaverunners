@@ -2,16 +2,13 @@ import React, { useState } from "react"
 import NavbarLinks from "./NavbarLinks"
 import Logo from "./Logo"
 import styled from "styled-components"
-import { Controller, Scene } from "react-scrollmagic"
 
 const Navigation = styled.nav`
-  top: 90vh;
   height: 10vh;
-  width: 88.6vw;
+  width: 89.7%;
   display: flex;
   background-color: #222;
   position: absolute;
-  overflow: hidden;
   justify-content: space-between;
   text-transform: uppercase;
   border-bottom: 2px solid #33333320;
@@ -19,7 +16,6 @@ const Navigation = styled.nav`
   padding: 0 5vw;
   z-index: 2;
   align-self: center;
-  box-shadow: 1px 1px 5px 3px #000;
 
   @media (max-width: 768px) {
     position: sticky;
@@ -97,33 +93,24 @@ const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false)
 
   return (
-    <Controller>
-      <Scene
-        pin={true}
-        enabled={true}
-        triggerHook="onLeave"
-        pinSettings={{ pushFollowers: false }}
+    <Navigation>
+      <Logo />
+      <Toggle
+        navbarOpen={navbarOpen}
+        onClick={() => setNavbarOpen(!navbarOpen)}
       >
-        <Navigation>
-          <Logo />
-          <Toggle
-            navbarOpen={navbarOpen}
-            onClick={() => setNavbarOpen(!navbarOpen)}
-          >
-            {navbarOpen ? <Hamburger open /> : <Hamburger />}
-          </Toggle>
-          {navbarOpen ? (
-            <Navbox>
-              <NavbarLinks />
-            </Navbox>
-          ) : (
-            <Navbox open>
-              <NavbarLinks />
-            </Navbox>
-          )}
-        </Navigation>
-      </Scene>
-    </Controller>
+        {navbarOpen ? <Hamburger open /> : <Hamburger />}
+      </Toggle>
+      {navbarOpen ? (
+        <Navbox>
+          <NavbarLinks />
+        </Navbox>
+      ) : (
+        <Navbox open>
+          <NavbarLinks />
+        </Navbox>
+      )}
+    </Navigation>
   )
 }
 

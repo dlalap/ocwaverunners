@@ -23,7 +23,7 @@ const productData = [
 ]
 
 const containerStyles = {
-  margin: "50px",
+  display: "flex",
   flexDirection: "row",
   flexWrap: "wrap",
   justifyContent: "space-between",
@@ -160,15 +160,8 @@ const WaveProduct = () => {
               <option value="audi">Audi</option>
             </select>
             <h5>{selectedItem}</h5> */}
-            <h1>Wave Runners Jersey</h1>
-            <h3>Champion</h3>
-            <p>
-              Crush all yours goals in a tee that wicks moisture, controls
-              odors, and moves with you--so nothing slows you down. This
-              Champion super-fine micro-mesh tee is lightweight, soft and
-              flexible for comfort that takes you from workout to weekend.
-            </p>
-            <Selector props={products} productFilter="Wave Runners Shirt - " />
+
+            <Selector props={products} />
           </div>
         )
       }}

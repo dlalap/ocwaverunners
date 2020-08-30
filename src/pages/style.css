@@ -55,10 +55,6 @@ header {
   position: relative;
 }
 
-.landing-image {
-  transform: translateY(-5vh);
-}
-
 .video-player {
   position: absolute;
   opacity: 50%;
@@ -82,7 +78,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: #000;
+  background-color: #222;
 }
 
 .box {
@@ -92,17 +88,9 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #111;
-  box-shadow: 1px 1px 5px 3px #000;
-  border-radius: 10px;
-}
-
-.box h1 {
-  color: #fff;
-}
-
-.box a {
-  color: #30c8ff;
+  background-color: #222;
+  box-shadow: 1px 1px 10px 3px #111;
+  border-radius: 50px;
 }
 
 a {
@@ -145,7 +133,7 @@ a {
 
 @media (max-width: 767.98px) {
   .about-pages div {
-    /* color: red; */
+    color: red;
   }
 }
 
@@ -194,42 +182,16 @@ a {
   margin: auto;
   height: 100vh;
   max-width: 1000px;
-}
-
-.apparel-section {
-  height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: transparent;
 }
 
-.apparel-section > * {
+.apparel-body > * {
   width: 45%;
   margin: auto;
-  padding: 10px;
-  /* border: 1px solid rgb(30, 255, 0); */
-}
-
-.cart-position {
-  padding: 50px;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.cart-item {
-  display: flex;
-}
-
-.cart-item img {
-  margin: 20px;
-  object-fit: cover;
-  width: 50px;
-  height: 50px;
-}
-
-.cart-item-details {
-  line-height: 1px;
+  padding: 20px;
 }
 
 .apparel-description Button {
@@ -250,11 +212,6 @@ a {
   margin: 0;
 }
 
-.set-qty {
-  display: flex;
-  align-items: center;
-}
-
 footer {
   height: 100vh;
   display: flex;
@@ -270,18 +227,4 @@ footer {
 
 .footer-dlp {
   margin-bottom: 0;
-}
-
-.ReactModal__Overlay {
-  opacity: 0;
-  transition: all 500ms ease-in-out;
-  z-index: 10;
-}
-
-.ReactModal__Overlay--after-open {
-  opacity: 1;
-}
-
-.ReactModal__Overlay--before-close {
-  opacity: 0;
 }

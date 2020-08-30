@@ -8,7 +8,7 @@ const Product = ({ product }) => {
   const price = formatCurrencyString({
     value: product.price,
     currency: product.currency,
-    language: "en-US",
+    language: navigator.language,
   })
 
   return (

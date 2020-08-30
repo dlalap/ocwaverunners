@@ -7,10 +7,8 @@ const TestStore = () => {
   return (
     <CartProvider
       stripe={loadStripe(process.env.GATSBY_STRIPE_PUBLISHABLE_KEY)}
-      successUrl={`/page-2/`}
-      // successUrl={`${window.location.origin}/page-2/`}
-      cancelUrl={`/`}
-      // cancelUrl={`${window.location.origin}/`}
+      successUrl={`${window.location.origin}/page-2/`}
+      cancelUrl={`${window.location.origin}/`}
       currency="USD"
       allowedCountries={["US", "CA"]}
       billingAddressCollection={true}

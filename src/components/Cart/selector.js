@@ -1,53 +1,10 @@
 import React, { useState } from "react"
 import { useShoppingCart } from "use-shopping-cart"
-import {
-  Select,
-  makeStyles,
-  FormControl,
-  FormHelperText,
-  Button,
-  Icon,
-  IconButton,
-} from "@material-ui/core"
-
-import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles"
-
-import RemoveIcon from "@material-ui/icons/Remove"
-import AddIcon from "@material-ui/icons/Add"
-import { green, purple, teal } from "@material-ui/core/colors"
-
-const useStyles = makeStyles(theme => ({
-  formControl: {
-    margin: theme.spacing(1),
-    minWidth: 180,
-    background: "white",
-  },
-  selectEmpty: {
-    marginTop: theme.spacing(2),
-  },
-  root: {
-    background: "linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)",
-    borderRadius: 3,
-    border: 0,
-    color: "white",
-    height: 48,
-    padding: "0 30px",
-    boxShadow: "0 3px 5px 2px rgba(33, 203, 243, .3)",
-    margin: theme.spacing(1),
-  },
-}))
-
-const theme = createMuiTheme({
-  palette: {
-    primary: { main: "#30c8ff" },
-  },
-})
 
 const Selector = props => {
-  const classes = useStyles()
   const { addItem } = useShoppingCart()
   const [product, selectProduct] = useState("default")
-  const [quantity, setQuantity] = useState(1)
+  const [quantity, setQuantity] = useState(0)
 
   const addProductFormat = selectedProduct => ({
     name: selectedProduct.name,
@@ -78,7 +35,7 @@ const Selector = props => {
 
   const changeQuantity = dir => {
     if (dir === -1) {
-      setQuantity(Math.max(1, quantity - 1))
+      setQuantity(Math.max(0, quantity - 1))
     } else if (dir === 1) {
       setQuantity(Math.min(5, quantity + 1))
     }
@@ -86,59 +43,22 @@ const Selector = props => {
 
   return (
     <div>
-      <FormControl variant="filled" className={classes.formControl}>
-        <Select onChange={handleChange}>
-          {productEntries.map((option, index) =>
-            option.name.includes(props.productFilter) ? (
-              <option key={index} value={index}>
-                {option.name.substring(option.name.indexOf("-") + 2)}
-              </option>
-            ) : (
-              ""
-            )
-          )}
-        </Select>
-        <FormHelperText>Select a size</FormHelperText>
-      </FormControl>
+      <select onChange={handleChange}>
+        <option key={-1} value="none" selected disabled hidden>
+          Select a size
+        </option>
+        {productEntries.map((option, index) => (
+          <option key={index} value={index}>
+            {option.name}
+          </option>
+        ))}
+      </select>
       <div>
         <p>Set Quantity</p>
-        <ThemeProvider className="set-qty" theme={theme}>
-          <IconButton
-            color="primary"
-            variant="contained"
-            onClick={() => changeQuantity(-1)}
-          >
-            <RemoveIcon />
-          </IconButton>
-          {quantity}
-          <IconButton
-            color="primary"
-            variant="contained"
-            onClick={() => changeQuantity(1)}
-          >
-            <AddIcon />
-          </IconButton>
-        </ThemeProvider>
+        <button onClick={() => changeQuantity(-1)}>-</button> {quantity}{" "}
+        <button onClick={() => changeQuantity(1)}>+</button>
       </div>
-      <br />
-      <ThemeProvider theme={theme}>
-        {product === "default" ? (
-          <Button
-            classes={{ root: classes.root }}
-            onClick={() => addItem(product, quantity)}
-            disabled
-          >
-            Add to Cart
-          </Button>
-        ) : (
-          <Button
-            classes={{ root: classes.root }}
-            onClick={() => addItem(product, quantity)}
-          >
-            Add to Cart
-          </Button>
-        )}
-      </ThemeProvider>
+      <button onClick={() => addItem(product, quantity)}>Add to Cart</button>
     </div>
   )
 }

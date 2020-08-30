@@ -104,8 +104,8 @@ const WaveStore = () => {
     <CartProvider
       stripe={loadStripe(process.env.GATSBY_STRIPE_PUBLISHABLE_KEY)}
       mode="client-only"
-      successUrl={`/page-2/`}
-      cancelUrl={`/`}
+      successUrl="/page-2/"
+      cancelUrl="/"
       // successUrl={`${window.location.origin}/page-2/`}
       // cancelUrl={`${window.location.origin}/`}
       currency="USD"

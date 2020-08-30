@@ -1,13 +1,7 @@
 import React, { useState } from "react"
 import Modal from "react-modal"
-import styled from "styled-components"
 import getStripe from "../../utils/stripejs"
 import { useShoppingCart } from "use-shopping-cart"
-import AddIcon from "@material-ui/icons/Add"
-import RemoveIcon from "@material-ui/icons/Remove"
-import CloseIcon from "@material-ui/icons/Close"
-import { Button, IconButton } from "@material-ui/core"
-import Divider from "@material-ui/core/Divider"
 
 const customStyles = {
   content: {
@@ -17,44 +11,8 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
-    minWidth: "300px",
-    minHeight: "500px",
-    zIndex: 2147483647,
   },
 }
-
-const ViewCart = styled.div`
-  @import url("https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap");
-  font-family: "Jost", sans-serif;
-  text-decoration: none;
-  color: #fff;
-  display: inline-block;
-  white-space: nowrap;
-  margin: 0 1vw;
-  transition: all 200ms ease-in;
-  position: relative;
-
-  :after {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 0%;
-    content: ".";
-    color: transparent;
-    background: #30c8ff;
-    height: 1px;
-    transition: all 0.4s ease-in;
-  }
-
-  :hover {
-    color: #30c8ff;
-    ::after {
-      width: 100%;
-    }
-    cursor: pointer;
-  }
-`
 
 const formatPrice = (amount, currency) => {
   if (amount === undefined || currency === undefined) {
@@ -107,7 +65,7 @@ function Cart() {
   }
   function afterOpenModal() {
     // references are now sync'd and can be accessed.
-    subtitle.style.color = "#333"
+    subtitle.style.color = "#f00"
   }
 
   function closeModal() {
@@ -121,7 +79,6 @@ function Cart() {
     incrementItem,
     decrementItem,
     formattedTotalPrice,
-    cartCount,
   } = useShoppingCart()
 
   const waveCheckout = () => {
@@ -138,39 +95,27 @@ function Cart() {
     const item = cartDetails[sku]
     // console.log(`item:`)
     // console.log(item)
-    console.log(item.image)
-
     cartItems.push(
-      <div className="cart-items" key={item.sku}>
-        <div className="cart-item">
-          {item.image !== undefined ? (
-            <img src={item.image} />
-          ) : (
-            <img src="https://www.fillmurray.com/300/300" />
-          )}
-          <div className="cart-item-details">
-            <h5>{item.name}</h5>
-            <h5>{formatPrice(item.price, item.currency)}</h5>
-
-            <IconButton onClick={() => decrementItem(sku)}>
-              <RemoveIcon />
-            </IconButton>
-            {item.quantity}
-            <IconButton onClick={() => incrementItem(sku)}>
-              <AddIcon />
-            </IconButton>
-          </div>
-        </div>
-        <hr />
-      </div>
+      <h5>
+        {item.name}
+        <br />
+        Price:
+        <br />
+        {formatPrice(item.price, item.currency)}
+        <br />
+        Qty:
+        <br />
+        <button onClick={() => decrementItem(sku)}>-</button>
+        {item.quantity}
+        <button onClick={() => incrementItem(sku)}>+</button>
+        <br />
+      </h5>
     )
   }
 
   return (
-    <div className="cart-position">
-      <ViewCart onClick={openModal}>
-        VIEW CART{cartCount ? " (" + cartCount + ")" : ""}
-      </ViewCart>
+    <div>
+      <button onClick={openModal}>Open Modal</button>
       <Modal
         isOpen={modalIsOpen}
         onAfterOpen={afterOpenModal}
@@ -178,74 +123,19 @@ function Cart() {
         style={customStyles}
         contentLabel="Cart Modal"
       >
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "flex-end",
-            width: "90%",
-            position: "absolute",
-          }}
-        >
-          <IconButton onClick={closeModal}>
-            <CloseIcon />
-          </IconButton>
-        </div>
-        <h2 ref={_subtitle => (subtitle = _subtitle)}>
-          Your Cart{cartCount ? " (" + cartCount + ")" : ""}
-        </h2>
-        {cartCount ? (
-          cartItems
-        ) : (
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <h3>It's empty!</h3>
-            <p>
-              <i>
-                Return to the store and
-                <br />
-                add stuff to your cart!
-              </i>
-            </p>
-          </div>
-        )}
+        <h2 ref={_subtitle => (subtitle = _subtitle)}>Shopping Cart</h2>
+        {cartItems}
         {formattedTotalPrice === "$0.00" ? (
           ""
         ) : (
-          <div
-            style={{
-              width: "100%",
-              display: "flex",
-              justifyContent: "center",
-            }}
-          >
-            <h4>
-              Total: <b>{formattedTotalPrice}</b>
-            </h4>
+          <div>
+            <h4>Total:</h4>
+            <h5>{formattedTotalPrice}</h5>
           </div>
         )}
-        <div
-          style={{
-            width: "100%",
-            display: "flex",
-            justifyContent: "space-evenly",
-          }}
-        >
-          <Button variant="contained" color="secondary" onClick={clearCart}>
-            clear cart
-          </Button>
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={redirectToCheckout}
-          >
-            checkout
-          </Button>
-        </div>
+        <button onClick={clearCart}>clear cart</button>
+        <button onClick={redirectToCheckout}>checkout</button>
+        <button onClick={closeModal}>close</button>
       </Modal>
     </div>
   )
