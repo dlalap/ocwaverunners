@@ -4,7 +4,7 @@ import { Controller, Scene } from "react-scrollmagic"
 import { Tween, Timeline } from "react-gsap"
 import styled from "styled-components"
 import Footer from "../components/Footer.js"
-import GroupImg from "../images/group2.jpg"
+// import GroupImg from "../images/group2.jpg"
 
 const AboutHeader = styled.header`
   height: 100vh;
@@ -48,7 +48,7 @@ const About = () => {
           <Scene duration="200%" triggerHook="onEnter">
             <Timeline wrapper={<div className="parallax" />}>
               <Tween position="0" from={{ yPercent: -50 }} to={{ yPercent: 0 }}>
-                <img src={GroupImg} alt="Women's Small" />
+                <img src="/group2.jpg" alt="Women's Small" />
               </Tween>
               <Tween
                 position="0"

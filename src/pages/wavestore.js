@@ -8,12 +8,12 @@ import { Carousel } from "react-responsive-carousel"
 import Button from "@material-ui/core/Button"
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import Checkout from "../components/checkout.js"
-import ShirtFront from "../images/apparel/WRShirtFront.jpg"
-import ShirtBack from "../images/apparel/WRShirtBack.jpg"
-import Shirt_UnisexMedium from "../images/apparel/unisex_shirt_medium.jpg"
-import Shirt_UnisexLarge from "../images/apparel/unisex_shirt_large.jpg"
-import Shirt_WomensSmall from "../images/apparel/womens_shirt_small.jpg"
-import Shirt_WomensSmall_Full from "../images/apparel/womens_small_1.jpg"
+// import ShirtFront from "../images/apparel/WRShirtFront.jpg"
+// import ShirtBack from "../images/apparel/WRShirtBack.jpg"
+// import Shirt_UnisexMedium from "../images/apparel/unisex_shirt_medium.jpg"
+// import Shirt_UnisexLarge from "../images/apparel/unisex_shirt_large.jpg"
+// import Shirt_WomensSmall from "../images/apparel/womens_shirt_small.jpg"
+// import Shirt_WomensSmall_Full from "../images/apparel/womens_small_1.jpg"
 import { loadStripe } from "@stripe/stripe-js"
 import { CartProvider, useShoppingCart } from "use-shopping-cart"
 import WaveProduct from "../components/Cart/WaveProduct"
@@ -121,7 +121,7 @@ const WaveStore = () => {
           <Scene duration="200%" triggerHook="onEnter">
             <Timeline wrapper={<div className="parallax" />}>
               <Tween position="0" from={{ yPercent: -50 }} to={{ yPercent: 0 }}>
-                <img src={Shirt_WomensSmall_Full} alt="Women's Small" />
+                <img src="/apparel/womens_small_1.jpg" alt="Women's Small" />
               </Tween>
               <Tween
                 position="0"
@@ -137,19 +137,28 @@ const WaveStore = () => {
             <div className="apparel-section">
               <Carousel className="apparel-carousel">
                 <div>
-                  <img src={ShirtFront} alt="shirt front" />
+                  <img src="/apparel/WRShirtFront.jpg" alt="shirt front" />
                 </div>
                 <div>
-                  <img src={ShirtBack} alt="shirt back" />
+                  <img src="/apparel/WRShirtBack.jpg" alt="shirt back" />
                 </div>
                 <div>
-                  <img src={Shirt_UnisexMedium} alt="unisex medium running" />
+                  <img
+                    src="/apparel/unisex_shirt_medium.jpg"
+                    alt="unisex medium running"
+                  />
                 </div>
                 <div>
-                  <img src={Shirt_WomensSmall} alt="women's small" />
+                  <img
+                    src="/apparel/womens_shirt_small.jpg"
+                    alt="women's small"
+                  />
                 </div>
                 <div>
-                  <img src={Shirt_UnisexLarge} alt="unisex large squatting" />
+                  <img
+                    src="/apparel/unisex_shirt_large.jpg"
+                    alt="unisex large squatting"
+                  />
                 </div>
               </Carousel>
               <WaveProduct />

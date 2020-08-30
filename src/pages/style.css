@@ -175,7 +175,7 @@ a {
 
 .apparel-header::before {
   content: "";
-  background-image: url(http://localhost:5500/src/images/apparel/womens_small_1.jpg);
+  background-image: url("/apparel/womens_small_1.jpg");
   background-size: cover;
   position: absolute;
   top: 0px;

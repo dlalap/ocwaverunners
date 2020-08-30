@@ -1,13 +1,13 @@
 import React from "react"
-import Logo from "../../images/wrhorizontal_white.png"
-import Video from "../../video/ocwaverunners.webm"
+// import Logo from "../../images/wrhorizontal_white.png"
+// import Video from "../../video/ocwaverunners.webm"
 
 const Landing = () => {
   return (
     <div className="landing">
       <img
         className="landing-image"
-        src={Logo}
+        src="/wrhorizontal_white.png"
         alt="Wave Runners Logo"
         width="500vw"
       />
@@ -21,7 +21,7 @@ const Landing = () => {
           muted
           autoPlay
         >
-          <source src={Video} type="video/webm" />
+          <source src="/video/ocwaverunners.webm" type="video/webm" />
         </video>
       </div>
     </div>
