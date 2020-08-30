@@ -31,23 +31,23 @@ const ParallaxStyled = styled.div`
     height: 100vh;
     position: relative;
     overflow: hidden;
+  }
 
-    img {
-      width: 100vw;
-      height: 150vh;
-      object-fit: cover;
-      position: absolute;
-    }
+  .parallax img {
+    width: 100vw;
+    height: 150vh;
+    object-fit: cover;
+    position: absolute;
+  }
 
-    h1 {
-      position: absolute;
-      font-size: 100px;
-      height: 90vh;
-      width: 100vw;
-      display: flex;
-      justify-content: center;
-      color: white;
-    }
+  .parallax h1 {
+    position: absolute;
+    font-size: 100px;
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    color: white;
   }
 `
 
