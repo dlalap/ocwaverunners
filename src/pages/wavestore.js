@@ -19,7 +19,36 @@ import { CartProvider, useShoppingCart } from "use-shopping-cart"
 import WaveProduct from "../components/Cart/WaveProduct"
 import Cart from "../components/Cart/modal_cart"
 import Modal from "react-modal"
-import "./style.css"
+
+const ParallaxStyled = styled.div`
+  background: #222;
+
+  .section {
+    height: 110vh;
+  }
+  .parallax {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+
+    img {
+      width: 100vw;
+      height: 150vh;
+      object-fit: cover;
+      position: absolute;
+    }
+
+    h1 {
+      position: absolute;
+      font-size: 100px;
+      height: 90vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      color: white;
+    }
+  }
+`
 
 const customStyles = {
   content: {
@@ -81,7 +110,7 @@ const WaveStore = props => {
       allowedCountries={["US", "CA"]}
       billingAddressCollection={true}
     >
-      <div className="parallax-styled">
+      <ParallaxStyled>
         <Controller>
           <Navbar />
           {/* <div className="apparel-header">
@@ -127,7 +156,7 @@ const WaveStore = props => {
 
           <Footer />
         </Controller>
-      </div>
+      </ParallaxStyled>
     </CartProvider>
   )
 }
