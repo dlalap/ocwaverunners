@@ -5,7 +5,6 @@ import { Tween, Timeline } from "react-gsap"
 import styled from "styled-components"
 import Footer from "../components/Footer.js"
 import GroupImg from "../images/group2.jpg"
-import "./style.css"
 
 const AboutHeader = styled.header`
   height: 100vh;
@@ -44,7 +43,7 @@ const About = () => {
   return (
     <div>
       <Navbar />
-      <div className="about-parallax">
+      <ParallaxStyled>
         <Controller>
           <Scene duration="200%" triggerHook="onEnter">
             <Timeline wrapper={<div className="parallax" />}>
@@ -64,7 +63,7 @@ const About = () => {
             </Timeline>
           </Scene>
         </Controller>
-      </div>
+      </ParallaxStyled>
       <section className="about">
         <Controller>
           <Scene duration="200%" pin={true} enabled={true} triggerHook={0}>
