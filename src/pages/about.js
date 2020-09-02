@@ -5,6 +5,7 @@ import { Tween, Timeline } from "react-gsap"
 import styled from "styled-components"
 import Footer from "../components/Footer.js"
 import GroupImg from "../images/group2.jpg"
+import "./style.css"
 
 const AboutHeader = styled.header`
   height: 100vh;
