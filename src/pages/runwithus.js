@@ -44,12 +44,12 @@ const RunWithUs = () => {
   return (
     <div>
       <Navbar />
-      <ParallaxStyled>
+      <div className="about-parallax">
         <Controller>
           <Scene duration="200%" triggerHook="onEnter">
             <Timeline wrapper={<div className="parallax" />}>
               <Tween position="0" from={{ yPercent: -50 }} to={{ yPercent: 0 }}>
-                <img src={GroupImg} alt="Women's Small" />
+                <img src={GroupImg} alt="Group Pic" />
               </Tween>
               <Tween
                 position="0"
@@ -63,7 +63,7 @@ const RunWithUs = () => {
             </Timeline>
           </Scene>
         </Controller>
-      </ParallaxStyled>
+      </div>
       <section className="about">
         <Controller>
           <Scene duration="200%" pin={true} enabled={true} triggerHook={0}>
