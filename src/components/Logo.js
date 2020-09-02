@@ -14,7 +14,7 @@ const LogoWrap = styled.div`
 
 const Svg = styled.span`
   display: inline-block;
-  width: 40px;
+  width: 48px;
   height: 48px;
   background-image: url(${WaveLogo});
 

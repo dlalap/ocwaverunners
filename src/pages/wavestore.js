@@ -84,9 +84,6 @@ const WaveStore = props => {
       <div className="parallax-styled">
         <Controller>
           <Navbar />
-          {/* <div className="apparel-header">
-          <h1>Apparel</h1>
-        </div> */}
           <Scene duration="200%" triggerHook="onEnter">
             <Timeline wrapper={<div className="parallax" />}>
               <Tween position="0" from={{ yPercent: -50 }} to={{ yPercent: 0 }}>
