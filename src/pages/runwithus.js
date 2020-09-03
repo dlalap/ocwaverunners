@@ -68,7 +68,7 @@ const RunWithUs = () => {
         <Controller>
           <Scene duration="200%" pin={true} enabled={true} triggerHook={0}>
             <div className="about-title">
-              <h2>About Us</h2>
+              <h2>We'll be right back.</h2>
             </div>
           </Scene>
 

@@ -49,6 +49,7 @@ header {
   display: flex;
   flex-flow: column;
   height: 100vh;
+  top: -10vh;
   justify-content: center;
   align-items: center;
   color: white;
@@ -141,12 +142,6 @@ a {
   justify-content: space-around;
   align-items: center;
   color: white;
-}
-
-@media (max-width: 767.98px) {
-  .about-pages div {
-    /* color: red; */
-  }
 }
 
 .about-pages div > p {
@@ -338,4 +333,29 @@ footer {
 
 .ReactModal__Overlay--before-close {
   opacity: 0;
+}
+
+@media (max-width: 767.98px) {
+  .about-pages div {
+    /* color: red; */
+  }
+
+  .landing-image {
+    transform: translateY(-10vh);
+    width: 100vw;
+  }
+
+  .front-page {
+    height: 150vh;
+  }
+
+  .box {
+    width: 90vw;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .parallax-styled .parallax h1 {
+    font-size: 80px;
+  }
 }

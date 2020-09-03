@@ -10,8 +10,7 @@ const Navigation = styled.nav`
   width: 88.6vw;
   display: flex;
   background-color: #222;
-  position: absolute;
-  overflow: hidden;
+  position: relative;
   justify-content: space-between;
   text-transform: uppercase;
   border-bottom: 2px solid #33333320;
@@ -30,6 +29,29 @@ const Navigation = styled.nav`
     left: 0;
   }
 `
+
+// const Navigation = styled.nav`
+//   height: 10vh;
+//   display: flex;
+//   background-color: #222;
+//   position: relative;
+//   justify-content: space-between;
+//   text-transform: uppercase;
+//   border-bottom: 2px solid #33333320;
+//   margin: 0 auto;
+//   padding: 0 5vw;
+//   z-index: 2;
+//   align-self: center;
+
+//   @media (max-width: 768px) {
+//     position: sticky;
+//     height: 8vh;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     left: 0;
+//   }
+// `
 
 const Toggle = styled.div`
   display: none;
@@ -56,6 +78,7 @@ const Navbox = styled.div`
     padding-top: 10vh;
     background-color: #000000cc;
     transition: all 0.3s ease-in;
+    z-index: 100;
     top: 8vh;
     left: ${props => (props.open ? "-100%" : "0")};
   }
