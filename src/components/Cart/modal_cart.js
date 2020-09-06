@@ -6,7 +6,8 @@ import { useShoppingCart } from "use-shopping-cart"
 import AddIcon from "@material-ui/icons/Add"
 import RemoveIcon from "@material-ui/icons/Remove"
 import CloseIcon from "@material-ui/icons/Close"
-import { Button, IconButton } from "@material-ui/core"
+import { Button, IconButton, makeStyles } from "@material-ui/core"
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles"
 import Divider from "@material-ui/core/Divider"
 
 const customStyles = {
@@ -69,6 +70,33 @@ const formatPrice = (amount, currency) => {
   return numberFormat.format(price)
 }
 
+const useStyles = makeStyles(theme => ({
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 180,
+    background: "white",
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2),
+  },
+  root: {
+    background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
+    borderRadius: 3,
+    border: 0,
+    color: "white",
+    height: 48,
+    padding: "0 30px",
+    boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
+    margin: theme.spacing(1),
+  },
+}))
+
+const theme = createMuiTheme({
+  palette: {
+    primary: { main: "#30c8ff" },
+  },
+})
+
 // const waveCheckout = async event => {
 //     event.preventDefault()
 
@@ -97,7 +125,9 @@ const formatPrice = (amount, currency) => {
 
 Modal.setAppElement(`#___gatsby`)
 
-function Cart() {
+const Cart = props => {
+  const classes = useStyles()
+
   var subtitle
 
   const [modalIsOpen, setIsOpen] = useState(false)
@@ -167,10 +197,7 @@ function Cart() {
   }
 
   return (
-    <div className="cart-position">
-      <ViewCart onClick={openModal}>
-        VIEW CART{cartCount ? " (" + cartCount + ")" : ""}
-      </ViewCart>
+    <div>
       <Modal
         isOpen={modalIsOpen}
         onAfterOpen={afterOpenModal}
@@ -247,6 +274,15 @@ function Cart() {
           </Button>
         </div>
       </Modal>
+
+      <Button
+        classes={{ root: classes.root }}
+        variant="contained"
+        color="primary"
+        onClick={openModal}
+      >
+        VIEW CART{cartCount ? " (" + cartCount + ")" : ""}
+      </Button>
     </div>
   )
 }

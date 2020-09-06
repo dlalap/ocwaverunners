@@ -3,11 +3,12 @@ import NavbarLinks from "./NavbarLinks"
 import Logo from "./Logo"
 import styled from "styled-components"
 import { Controller, Scene } from "react-scrollmagic"
+import useWindowSize from "../utils/windowsize"
 
 const Navigation = styled.nav`
   top: 90vh;
   height: 10vh;
-  width: 88.6vw;
+  width: 100vw !important;
   display: flex;
   background-color: #222;
   position: relative;
@@ -124,7 +125,7 @@ const Navbar = () => {
       <Scene
         pin={true}
         enabled={true}
-        triggerHook="onLeave"
+        triggerHook={0}
         pinSettings={{ pushFollowers: false }}
       >
         <Navigation>

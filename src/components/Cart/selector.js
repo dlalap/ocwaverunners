@@ -11,7 +11,7 @@ import {
 } from "@material-ui/core"
 
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles"
-
+import Cart from "./modal_cart"
 import RemoveIcon from "@material-ui/icons/Remove"
 import AddIcon from "@material-ui/icons/Add"
 import { green, purple, teal } from "@material-ui/core/colors"
@@ -19,7 +19,7 @@ import { green, purple, teal } from "@material-ui/core/colors"
 const useStyles = makeStyles(theme => ({
   formControl: {
     margin: theme.spacing(1),
-    minWidth: 180,
+    minWidth: 250,
     background: "white",
   },
   selectEmpty: {
@@ -45,7 +45,7 @@ const theme = createMuiTheme({
 
 const Selector = props => {
   const classes = useStyles()
-  const { addItem } = useShoppingCart()
+  const { addItem, cartCount } = useShoppingCart()
   const [product, selectProduct] = useState("default")
   const [quantity, setQuantity] = useState(1)
 
@@ -83,11 +83,10 @@ const Selector = props => {
       setQuantity(Math.min(5, quantity + 1))
     }
   }
-
   return (
     <div>
       <FormControl variant="filled" className={classes.formControl}>
-        <Select onChange={handleChange}>
+        <Select onChange={handleChange} defaultValue="">
           {productEntries.map((option, index) =>
             option.name.includes(props.productFilter) ? (
               <option key={index} value={index}>
@@ -122,22 +121,25 @@ const Selector = props => {
       </div>
       <br />
       <ThemeProvider theme={theme}>
-        {product === "default" ? (
-          <Button
-            classes={{ root: classes.root }}
-            onClick={() => addItem(product, quantity)}
-            disabled
-          >
-            Add to Cart
-          </Button>
-        ) : (
-          <Button
-            classes={{ root: classes.root }}
-            onClick={() => addItem(product, quantity)}
-          >
-            Add to Cart
-          </Button>
-        )}
+        <div style={{ display: "flex" }}>
+          {product === "" ? (
+            <Button
+              classes={{ root: classes.root }}
+              onClick={() => addItem(product, quantity)}
+              disabled
+            >
+              Add to Cart
+            </Button>
+          ) : (
+            <Button
+              classes={{ root: classes.root }}
+              onClick={() => addItem(product, quantity)}
+            >
+              Add to Cart
+            </Button>
+          )}
+          <Cart propClass={{ root: classes.root }} />
+        </div>
       </ThemeProvider>
     </div>
   )

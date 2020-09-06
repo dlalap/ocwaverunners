@@ -19,6 +19,7 @@ const ParallaxStyled = styled.div`
     height: 100vh;
     position: relative;
     overflow: hidden;
+    top: -10vh;
 
     img {
       width: 100vw;

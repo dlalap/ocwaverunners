@@ -4,6 +4,7 @@ import { graphql, StaticQuery } from "gatsby"
 import { useShoppingCart } from "use-shopping-cart"
 import ProductCard from "../Products/ProductCard"
 import Selector from "./selector"
+import "../../pages/style.css"
 
 const containerStyles = {
   margin: "50px",
@@ -71,7 +72,7 @@ const WaveProduct = () => {
         }
 
         return (
-          <div style={containerStyles}>
+          <div className="product-container">
             <h1>Wave Runners Jersey</h1>
             <h3>Champion</h3>
             <p>

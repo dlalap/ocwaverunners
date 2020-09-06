@@ -20,6 +20,7 @@ import WaveProduct from "../components/Cart/WaveProduct"
 import Cart from "../components/Cart/modal_cart"
 import Modal from "react-modal"
 import "./style.css"
+import useWindowSize from "../utils/windowsize"
 
 const customStyles = {
   content: {
@@ -71,6 +72,8 @@ const WaveStore = props => {
     setIsOpen(false)
   }
 
+  const windowSize = useWindowSize()
+
   return (
     <CartProvider
       stripe={loadStripe(process.env.GATSBY_STRIPE_PUBLISHABLE_KEY)}
@@ -99,9 +102,12 @@ const WaveStore = props => {
             </Timeline>
           </Scene>
           <div className="apparel-body">
-            <Cart />
+            {/* <Cart /> */}
             <div className="apparel-section">
-              <Carousel className="apparel-carousel">
+              <Carousel
+                className="apparel-carousel"
+                showThumbs={windowSize.width > 767.98}
+              >
                 <div>
                   <img src={ShirtFront} alt="shirt front" />
                 </div>

@@ -1,6 +1,7 @@
 import React from "react"
 import Logo from "../../images/wrhorizontal_white.png"
 import Video from "../../video/ocwaverunners.webm"
+import GroupImg from "../../images/group.jpg"
 
 const Landing = () => {
   return (
@@ -20,6 +21,7 @@ const Landing = () => {
           loop
           muted
           autoPlay
+          poster={GroupImg}
         >
           <source src={Video} type="video/webm" />
         </video>

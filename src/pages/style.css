@@ -194,6 +194,7 @@ a {
   height: 100vh;
   position: relative;
   overflow: hidden;
+  top: -10vh;
 }
 
 .parallax-styled .parallax img {
@@ -258,6 +259,14 @@ a {
   margin: auto;
   padding: 10px;
   /* border: 1px solid rgb(30, 255, 0); */
+}
+
+.product-container {
+  margin: 50px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1rem 0 1rem 0;
 }
 
 .cart-position {
@@ -357,5 +366,41 @@ footer {
 
   .parallax-styled .parallax h1 {
     font-size: 80px;
+  }
+
+  .apparel-body {
+    height: 110vh;
+  }
+
+  .apparel-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+  }
+
+  .apparel-section > * {
+    width: 100%;
+    margin: auto;
+    padding: 0;
+
+    /* border: 1px solid rgb(30, 255, 0); */
+  }
+
+  .product-container {
+    margin: 0;
+  }
+
+  .product-container > * {
+    margin: 10px;
+  }
+
+  .carousel .slide img {
+    max-height: 30vh;
+    width: auto;
+    object-fit: contain;
+    margin: 0;
   }
 }
