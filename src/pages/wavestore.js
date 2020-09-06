@@ -73,6 +73,8 @@ const WaveStore = props => {
   }
 
   const windowSize = useWindowSize()
+  console.log("windowSize")
+  console.log(windowSize)
 
   return (
     <CartProvider

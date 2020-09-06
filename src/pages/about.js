@@ -16,7 +16,7 @@ const ParallaxStyled = styled.div`
     height: 110vh;
   }
   .parallax {
-    height: 100vh;
+    height: 90vh;
     position: relative;
     overflow: hidden;
     top: -10vh;
