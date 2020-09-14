@@ -107,13 +107,7 @@ const AnimeTest = () => {
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
       />
 
-      <Scene
-        duration="500%"
-        pin={true}
-        enabled={true}
-        triggerHook={0}
-        pushFollowers={false}
-      >
+      <Scene duration="500%" pin={true} enabled={true} triggerHook={0}>
         <LongPage className="update-demo">
           <h1>Our 5K Boot Camp Run Structure</h1>
           <AnimationFrame mobileTranslateX={mobileXPosition}>
