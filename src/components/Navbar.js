@@ -8,7 +8,7 @@ import useWindowSize from "../utils/windowsize"
 const Navigation = styled.nav`
   top: 90vh;
   height: 10vh;
-  width: 100vw !important;
+  width: 88vw !important;
   display: flex;
   background-color: #222;
   position: relative;
@@ -119,12 +119,13 @@ const Hamburger = styled.div`
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false)
+  const windowSize = useWindowSize()
 
   return (
     <Controller>
       <Scene
         pin={true}
-        enabled={true}
+        enabled={windowSize.width > 768}
         triggerHook={0}
         pinSettings={{ pushFollowers: false }}
       >

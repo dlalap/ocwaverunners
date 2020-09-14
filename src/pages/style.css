@@ -31,6 +31,12 @@ header {
   background-image: url("https://i.redd.it/cgt04rgz44g31.png");
 }
 
+.el {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .landing-parallax {
   position: absolute;
   overflow: hidden;
@@ -287,7 +293,7 @@ a {
 }
 
 .cart-item-details {
-  line-height: 1px;
+  line-height: 5px;
 }
 
 .apparel-description Button {

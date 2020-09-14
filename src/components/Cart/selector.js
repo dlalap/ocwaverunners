@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { useShoppingCart } from "use-shopping-cart"
 import {
   Select,
+  MenuItem,
   makeStyles,
   FormControl,
   FormHelperText,
@@ -60,7 +61,7 @@ const Selector = props => {
 
   const handleChange = e => {
     e.preventDefault()
-    if (productEntries === "undefined") {
+    if (productEntries === "default") {
       return
     }
 
@@ -69,6 +70,11 @@ const Selector = props => {
     selectProduct(formattedProduct)
     console.log(`current product:`)
     console.log(product)
+  }
+
+  const logChange = e => {
+    e.preventDefault()
+    console.log(e)
   }
 
   const productEntries = []
@@ -89,9 +95,9 @@ const Selector = props => {
         <Select onChange={handleChange} defaultValue="">
           {productEntries.map((option, index) =>
             option.name.includes(props.productFilter) ? (
-              <option key={index} value={index}>
+              <MenuItem key={index} value={index}>
                 {option.name.substring(option.name.indexOf("-") + 2)}
-              </option>
+              </MenuItem>
             ) : (
               ""
             )

@@ -1,13 +1,10 @@
-import React, { useState } from "react"
-import styled from "styled-components"
+import React from "react"
 import Navbar from "../components/Navbar.js"
 import Footer from "../components/Footer.js"
 import { Controller, Scene } from "react-scrollmagic"
 import { Tween, Timeline } from "react-gsap"
 import { Carousel } from "react-responsive-carousel"
-import Button from "@material-ui/core/Button"
 import "react-responsive-carousel/lib/styles/carousel.min.css"
-import Checkout from "../components/checkout.js"
 import ShirtFront from "../images/apparel/WRShirtFront.jpg"
 import ShirtBack from "../images/apparel/WRShirtBack.jpg"
 import Shirt_UnisexMedium from "../images/apparel/unisex_shirt_medium.jpg"
@@ -15,23 +12,11 @@ import Shirt_UnisexLarge from "../images/apparel/unisex_shirt_large.jpg"
 import Shirt_WomensSmall from "../images/apparel/womens_shirt_small.jpg"
 import Shirt_WomensSmall_Full from "../images/apparel/womens_small_1.jpg"
 import { loadStripe } from "@stripe/stripe-js"
-import { CartProvider, useShoppingCart } from "use-shopping-cart"
+import { CartProvider } from "use-shopping-cart"
 import WaveProduct from "../components/Cart/WaveProduct"
-import Cart from "../components/Cart/modal_cart"
 import Modal from "react-modal"
 import "./style.css"
 import useWindowSize from "../utils/windowsize"
-
-const customStyles = {
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-  },
-}
 
 Modal.setAppElement(`#___gatsby`)
 
@@ -49,29 +34,6 @@ Modal.setAppElement(`#___gatsby`)
 // }
 
 const WaveStore = props => {
-  let subtitle
-
-  const {
-    totalPrice,
-    redirectToCheckout,
-    cartCount,
-    addItem,
-  } = useShoppingCart()
-  const [shirtSize, setShirtSize] = useState(2)
-  const [modalIsOpen, setIsOpen] = useState(false)
-
-  const openModal = () => {
-    setIsOpen(true)
-  }
-
-  const afterOpenModal = () => {
-    subtitle.style.color = "#f00"
-  }
-
-  const closeModal = () => {
-    setIsOpen(false)
-  }
-
   const windowSize = useWindowSize()
   console.log("windowSize")
   console.log(windowSize)

@@ -1,40 +1,9 @@
-import React, { useState } from "react"
-import { loadStripe } from "@stripe/stripe-js"
+import React from "react"
 import { graphql, StaticQuery } from "gatsby"
-import { useShoppingCart } from "use-shopping-cart"
-import ProductCard from "../Products/ProductCard"
 import Selector from "./selector"
 import "../../pages/style.css"
 
-const containerStyles = {
-  margin: "50px",
-  flexDirection: "row",
-  flexWrap: "wrap",
-  justifyContent: "space-between",
-  padding: "1rem 0 1rem 0",
-}
-
-let stripePromise
-const getStripe = () => {
-  if (!stripePromise) {
-    stripePromise = loadStripe(process.env.GATSBY_STRIPE_PUBLISHABLE_KEY)
-  }
-  return stripePromise
-}
-
 const WaveProduct = () => {
-  const [status, setStatus] = useState("idle")
-  const [loading, setLoading] = useState(false)
-  const [selectedItem, setSelectedItem] = useState("Select a thing")
-
-  const {
-    totalPrice,
-    cartCount,
-    addItem,
-    redirectToCheckout,
-    cartDetails,
-  } = useShoppingCart()
-
   return (
     <StaticQuery
       query={graphql`

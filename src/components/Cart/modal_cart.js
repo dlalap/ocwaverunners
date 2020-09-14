@@ -204,6 +204,7 @@ const Cart = props => {
         onRequestClose={closeModal}
         style={customStyles}
         contentLabel="Cart Modal"
+        scrollable={true}
       >
         <div
           style={{

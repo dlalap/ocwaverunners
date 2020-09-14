@@ -14,7 +14,7 @@ const Product = ({ product }) => {
   return (
     <article>
       <figure>
-        <img src={product.image} alt={`Image of ${product.name}`} />
+        <img src={product.image} alt={`${product.name}`} />
         <figcaption>{product.name}</figcaption>
       </figure>
       <p>{price}</p>

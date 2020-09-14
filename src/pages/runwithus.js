@@ -5,11 +5,8 @@ import { Tween, Timeline } from "react-gsap"
 import styled from "styled-components"
 import Footer from "../components/Footer.js"
 import GroupImg from "../images/group.jpg"
+import AnimeTest from "./anime_test"
 import "./style.css"
-
-const AboutHeader = styled.header`
-  height: 100vh;
-`
 
 const ParallaxStyled = styled.div`
   .section {
@@ -65,7 +62,8 @@ const RunWithUs = () => {
           </Scene>
         </Controller>
       </ParallaxStyled>
-      <section className="about">
+      <AnimeTest />
+      {/* <section className="about">
         <Controller>
           <Scene duration="200%" pin={true} enabled={true} triggerHook={0}>
             <div className="about-title">
@@ -115,7 +113,7 @@ const RunWithUs = () => {
             </div>
           </div>
         </Controller>
-      </section>
+      </section> */}
       <Footer />
     </div>
   )

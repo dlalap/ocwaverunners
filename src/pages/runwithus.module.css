@@ -1,0 +1,42 @@
+.runwithus {
+  height: 300vh;
+  display: flex;
+}
+
+.runwithusTitle {
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  margin: 0 !important;
+}
+
+.runwithus-pages {
+  width: 50%;
+}
+
+.runwithus-pages div {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+}
+
+.runwithus-pages div > p {
+  width: 80%;
+  font-size: 18px;
+}
+
+.runwithus-pages div:nth-child(1) {
+  background-color: rgb(56, 134, 89);
+}
+.runwithus-pages div:nth-child(2) {
+  background-color: rgb(129, 42, 110);
+}
+.runwithus-pages div:nth-child(3) {
+  background-color: rgb(31, 88, 107);
+}
